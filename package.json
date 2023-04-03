@@ -23,6 +23,7 @@
     "postcss": "^8.4.21",
     "postcss-rem": "^2.0.4",
     "preact": "^10.13.0",
+    "preact-router": "^4.1.0",
     "prettier": "^2.8.7",
     "sanitize.css": "^13.0.0",
     "sass": "^1.60.0",
