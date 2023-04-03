@@ -1,4 +1,6 @@
 @import url(sanitize.css);
+@import url(sanitize.css/typography);
+@import url(sanitize.css/forms);
 
 :root {
 	--base--white: #f9f9f9;

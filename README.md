@@ -7,49 +7,28 @@ We will be building a control to show list items.
 
 ## Task 1 - Render a list of items
 
-Use generics to create list component to render the items. In this exercise, the types already exist and a few tests cases exist.
+Use generics to create list component to render the items. In this exercise, the types already exist and tests cases exist.
 
 - Implement the rendering function for a list of items.
-- Finish writing the tests.
+- Finish writing the tests for rendering and the onClick handler. Ensure the tests pass.
+- Show the control working in the browser.
 
 To preview in browser, use [http://localhost:8081/list](http://localhost:8081/list)
 
-## Task 2 - Click event
+## Task 2 - Menu
 
-Make the items clickable so the parent component can receive the event.
+The menu component displays a button to show/hide a popup menu.
 
-- Implement the `<ListWithClick />` component. Define types for args and events.
-- Implement tests for render and for your event handler.
+- Implement the control to show/hide a hover menu.
+- When the user clicks a menu item, pass the value to the onClick handler and close the menu.
 
-To preview in browser, use [http://localhost:8081/list-with-click](http://localhost:8081/list-with-click)
+To preview in browser, use [http://localhost:8081/menu](http://localhost:8081/menu)
 
-## Task 3 - Typed events
+## Task 3 - Feed
 
-Make the events typed using generics such that the caller can receive a custom action and payload with the event.
+Create a list component to render a list of items. Load new items any time the user scrolls to the bottom of the list.
 
-To preview in browser, use [http://localhost:8081/typed-events](http://localhost:8081/typed-events)
-
-Example Usage
-
-```js
-<ListWithCustomEvents
-	items={
-		[
-			/* list items */
-		]
-	}
-	onChange={(action, payload) => {
-		// do something
-		console.log(action, payload);
-	}}
-/>
-```
-
-## Task 4 - Inifinite scroll
-
-Create a list component to load new items any time the user scrolls to the bottom of the list.
-
-To preview in browser, use [http://localhost:8081/infinite-scroll](http://localhost:8081/infinite-scroll)
+To preview in browser, use [http://localhost:8081/feed](http://localhost:8081/feed)
 
 # Incepto Frontend Tech Stack
 

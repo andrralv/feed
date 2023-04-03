@@ -2,3 +2,25 @@
 	min-width: 100vw;
 	min-height: 100vh;
 }
+
+.home {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	padding-top: rem(60px);
+	padding-left: rem(60px);
+}
+
+.app_links {
+	display: flex;
+	flex-direction: column;
+	gap: rem(8px);
+	padding: rem(16px);
+	min-width: rem(350px);
+}
+
+.app_links > a {
+	font-size: rem(24px);
+	text-decoration: none;
+	padding: rem(20px) 0;
+}
