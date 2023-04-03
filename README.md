@@ -12,6 +12,8 @@ Use generics to create list component to render the items. In this exercise, the
 - Implement the rendering function for a list of items.
 - Finish writing the tests.
 
+To preview in browser, use [http://localhost:8081/list](http://localhost:8081/list)
+
 ## Task 2 - Click event
 
 Make the items clickable so the parent component can receive the event.
@@ -19,9 +21,13 @@ Make the items clickable so the parent component can receive the event.
 - Implement the `<ListWithClick />` component. Define types for args and events.
 - Implement tests for render and for your event handler.
 
+To preview in browser, use [http://localhost:8081/list-with-click](http://localhost:8081/list-with-click)
+
 ## Task 3 - Typed events
 
 Make the events typed using generics such that the caller can receive a custom action and payload with the event.
+
+To preview in browser, use [http://localhost:8081/typed-events](http://localhost:8081/typed-events)
 
 Example Usage
 
@@ -42,6 +48,8 @@ Example Usage
 ## Task 4 - Inifinite scroll
 
 Create a list component to load new items any time the user scrolls to the bottom of the list.
+
+To preview in browser, use [http://localhost:8081/infinite-scroll](http://localhost:8081/infinite-scroll)
 
 # Incepto Frontend Tech Stack
 
