@@ -1,3 +1,23 @@
+# Incepto Interview Question
+
+We will be building a control to list items.
+
+## Task 1 - Render a list of items
+
+Use generics to create list component to render the items.
+
+## Task 2 - Click event
+
+Make the items clickable so the parent component can receive the event.
+
+## Task 3 - Typed events
+
+Make the events typed using generics such that the caller can receive a custom payload with the event.
+
+## Task 4 - Inifinite scroll
+
+Enhance the component to load new items any time the user scrolls to the bottom of the list.
+
 # Incepto Frontend Tech Stack
 
 This repo contains a scaffold for building frontend apps. Includes testing, hot reload, and build integrated.
@@ -13,26 +33,3 @@ The tech stack is:
   - [postcss-rem](https://github.com/pierreburel/postcss-rem): Rem helpers. e.g. `rem(10px)`
   - [cssnano](https://cssnano.co/): to compress CSS
   - [purge-css](https://purgecss.com/): prevents emitting unused styles.
-
-### Editor config
-
-These are not checked in, but vscode folder should have a settings.json with this in it.
-
-```json
-{
-	"typescript.format.semicolons": "insert",
-	"[typescriptreact]": {
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[typescript]": {
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"editor.codeActionsOnSave": {
-		"source.fixAll": true,
-		"source.organizeImports": true,
-		"source.sortMembers": true
-	}
-}
-```
