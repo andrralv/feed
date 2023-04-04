@@ -24,6 +24,10 @@ The menu component displays a button to show/hide a popup menu.
 
 To preview in browser, use [http://localhost:8081/menu](http://localhost:8081/menu)
 
+Here is an example of a hover menu.
+
+<img src="./docs/menu.gif" width="256"></img>
+
 ## Task 3 - Feed
 
 Create a list component to render a list of items. Load new items any time the user scrolls to the bottom of the list.
@@ -32,7 +36,7 @@ To preview in browser, use [http://localhost:8081/feed](http://localhost:8081/fe
 
 # Incepto Frontend Tech Stack
 
-This repo contains a scaffold for building frontend apps. Includes testing, hot reload, and build integrated.
+This repo contains a scaffold for building frontend apps. Includes testing, hot reload, and build.
 
 The tech stack is:
 
