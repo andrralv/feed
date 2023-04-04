@@ -1,4 +1,5 @@
 import { FunctionalComponent } from 'preact';
+import { useState } from 'preact/hooks';
 import { Menu } from './menu';
 
 enum PageRoute {
@@ -17,12 +18,20 @@ const menuItems = [
 	{ label: 'Sign Out', action: MenuAction.Logout, payload: undefined }
 ];
 
-export const MenuRoute: FunctionalComponent<{}> = () => (
-	<Menu
-		buttonText="Click"
-		items={menuItems}
-		onSelect={(a, p) => {
-			console.log(`action: ${a}, payload: ${p}`);
-		}}
-	/>
-);
+export const MenuRoute: FunctionalComponent<{}> = () => {
+	const [lastValue, setLastValue] = useState('');
+
+	return (
+		<div class="menu_page">
+			<Menu
+				buttonText="Click"
+				items={menuItems}
+				onSelect={(a, p) => {
+					setLastValue(`action: ${a}, payload: ${p}`);
+				}}
+			/>
+
+			<div>{lastValue}</div>
+		</div>
+	);
+};

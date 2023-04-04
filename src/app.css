@@ -24,3 +24,11 @@
 	text-decoration: none;
 	padding: rem(20px) 0;
 }
+
+.menu_page {
+	display: flex;
+	flex-direction: column;
+	min-width: rem(400px);
+	gap: rem(44px);
+	padding: rem(40px);
+}
