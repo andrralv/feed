@@ -43,7 +43,7 @@ The tech stack is:
 - [ViteJS](https://vitejs.dev/): for bundling
 - [Preact](): like React; more optimized.
 - [Vitest](https://vitest.dev/): a test runnner with an API similar to Jest
-- [Preact Testing Library](https://preactjs.com/guide/v10/preact-testing-library/): for DOM testing. analogous to React Testing Library.
+- [Preact Testing Library](https://preactjs.com/guide/v10/preact-testing-library/): for DOM testing. Analogous to React Testing Library.
 - CSS and SASS are available. PostCSS is configured with
   - [Autoprefixer](https://github.com/postcss/autoprefixer#readme)
   - [postcss-rem](https://github.com/pierreburel/postcss-rem): Rem helpers. e.g. `rem(10px)`
