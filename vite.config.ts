@@ -1,32 +1,45 @@
-import { defineConfig } from "vitest/config";
-import preact from "@preact/preset-vite";
-import { createRequire } from "module";
+import preact from '@preact/preset-vite';
+import { createRequire } from 'module';
+import { defineConfig } from 'vitest/config';
 
 const require = createRequire(import.meta.url);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [preact()],
-  server: {
-    port: 8081,
-  },
-  test: {
-    globals: true,
-    environment: 'happy-dom',
-    watch: false,
+	plugins: [preact()],
+	server: {
+		port: 8081
+	},
+	css: {
+		modules: {
+			localsConvention: 'camelCase'
+		}
+	},
 
-    // These aliases should be temporary
-    // https://github.com/vitest-dev/vitest/issues/1652#issuecomment-1195323396
-    // https://github.com/withastro/astro/issues/3449#issuecomment-1241167878
-    alias: [
-      {
-        find: "preact/hooks",
-        replacement: require.resolve("preact/hooks"),
-      },
-      {
-        find: "@testing-library/preact",
-        replacement: require.resolve("@testing-library/preact"),
-      },
-    ],
-  },
+	test: {
+		globals: true,
+		environment: 'happy-dom',
+		watch: false,
+		mockReset: true,
+
+		css: {
+			modules: {
+				classNameStrategy: 'non-scoped'
+			}
+		},
+
+		// These aliases should be temporary
+		// https://github.com/vitest-dev/vitest/issues/1652#issuecomment-1195323396
+		// https://github.com/withastro/astro/issues/3449#issuecomment-1241167878
+		alias: [
+			{
+				find: 'preact/hooks',
+				replacement: require.resolve('preact/hooks')
+			},
+			{
+				find: '@testing-library/preact',
+				replacement: require.resolve('@testing-library/preact')
+			}
+		]
+	}
 });
