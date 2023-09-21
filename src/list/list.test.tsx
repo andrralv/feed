@@ -1,4 +1,4 @@
-import { render } from '@testing-library/preact';
+import { render, fireEvent } from '@testing-library/preact';
 import { describe, expect, it, vi } from 'vitest';
 import { List } from './list';
 
@@ -35,12 +35,11 @@ describe('ListView - render', () => {
 				onClick: vi.fn()
 			};
 
-			const { container } = render(<List {...testArgs} />);
-			// console.log(container.outerHTML)
-			const got = container;
+			const { container, debug } = render(<List {...testArgs} />);
+			const got = container.children.item(0);
 
-			t.want.forEach((want, i) => expect(got.children[i].textContent).toEqual(want));
-
+			t.want.forEach((want, i) => {
+				expect(got?.children[i].textContent).toEqual(want)});
 			expect(testArgs.onClick).toHaveBeenCalledTimes(0);
 		});
 	});
@@ -64,20 +63,14 @@ describe('ListView - click event', () => {
 			const onClick = vi.fn();
 
 			const { container } = render(<List items={t.items} onClick={onClick} />);
-			// console.log(container.outerHTML)
-			const got = container.getElementsByClassName('todo')[0];
-
-			// TODO: identify the click target, fireEvent, check the event
-			// const el = container.getElementsByTagName('todo')[0];
-
-			// if (el) {
-			// 	expect(el).not.toBeNull();
-			// 	fireEvent.click(el);
-			// } else {
-			// 	expect(el).not.toBeNull();
-			// }
-
-			// TODO: assertions
+			const el = container.getElementsByClassName('todo')[0];
+			
+			if (el) {
+				t.items.forEach(item => expect(onClick).not.toHaveBeenCalled());
+				fireEvent.click(el);
+			} else {
+				t.items.forEach(item => expect(onClick).toHaveBeenCalledWith(item.value));
+			}
 		});
 	});
 });

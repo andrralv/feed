@@ -3,13 +3,13 @@ import { useState } from 'preact/hooks';
 import { Menu } from './menu';
 
 enum PageRoute {
-	Home,
-	EditProfile
+	Home = 'HOME PAGE',
+	EditProfile = 'EDIT PROFILE PAGE'
 }
 
 enum MenuAction {
-	Redirect,
-	Logout
+	Redirect = 'REDIRECT',
+	Logout = 'LOGOUT'
 }
 
 const menuItems = [
