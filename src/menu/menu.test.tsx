@@ -1,4 +1,4 @@
-import { render, fireEvent, screen } from '@testing-library/preact';
+import { render, fireEvent } from '@testing-library/preact';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { Menu } from './menu';
 

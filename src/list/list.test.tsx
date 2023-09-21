@@ -35,7 +35,7 @@ describe('ListView - render', () => {
 				onClick: vi.fn()
 			};
 
-			const { container, debug } = render(<List {...testArgs} />);
+			const { container } = render(<List {...testArgs} />);
 			const got = container.children.item(0);
 
 			t.want.forEach((want, i) => {
@@ -59,18 +59,14 @@ describe('ListView - click event', () => {
 	];
 
 	tests.forEach((t) => {
-		it(`renders correctly: ${t.name}`, () => {
+		it(`click event - before and after: ${t.name}`, () => {
 			const onClick = vi.fn();
 
 			const { container } = render(<List items={t.items} onClick={onClick} />);
 			const el = container.getElementsByClassName('todo')[0];
-			
-			if (el) {
-				t.items.forEach(item => expect(onClick).not.toHaveBeenCalled());
-				fireEvent.click(el);
-			} else {
-				t.items.forEach(item => expect(onClick).toHaveBeenCalledWith(item.value));
-			}
+			t.items.forEach(() => expect(onClick).not.toHaveBeenCalled());
+			fireEvent.click(el);
+			t.items.forEach(item => expect(onClick).toHaveBeenCalledWith(item.value));
 		});
 	});
 });
