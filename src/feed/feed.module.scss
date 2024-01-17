@@ -1,0 +1,38 @@
+@import '../common/palette';
+
+.feed {
+  position: relative;
+  ul {
+    margin: 1px;
+    padding: 20px;
+    min-height: 100vh;
+    li {
+      list-style-type: none;
+      font-size: 28px;
+    }
+  }
+
+  .loadingMessage, .errorMessage {
+    position: absolute;
+    font-size: 24px;
+    background: $white10;
+    padding: 10px;
+    bottom: 10px;
+    right: 40px;
+    border: 1px solid $grey70;
+  }
+
+  .messageShow {
+    opacity: 100;
+  }
+
+  .messageHidden {
+    opacity: 0;
+    transition: all 250ms ease-out 2s;
+  }
+
+  .errorMessage {
+    color: red;
+    bottom: 80px;
+  }
+}

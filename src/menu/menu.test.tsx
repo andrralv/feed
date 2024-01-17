@@ -20,7 +20,9 @@ describe('menu - rendering', () => {
   it('renders correctly', () => {
     const { container } = render(<Menu {...testArgs}/>);
     const button = container.getElementsByClassName('menu_button').item(0);
+    const menu = container.getElementsByClassName('menu_dropdown').item(0);
     expect(button?.textContent).toBe(buttonText);
+    expect(menu).toBeNull();
   });
 })
 
@@ -61,7 +63,7 @@ describe('when clicking on a list item', () => {
     fireEvent.click(button);
     const menuListItem = container.getElementsByClassName('menu_listMenuItem').item(0);
     await fireEvent.click(menuListItem, {});
-    expect(testArgs.onSelect).toHaveBeenCalledOnce();
+    expect(testArgs.onSelect).toHaveBeenCalledWith('REDIRECT', 'REDIRECT TO HOME PAGE');
   })
 })
 

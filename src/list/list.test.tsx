@@ -50,11 +50,19 @@ describe('ListView - click event', () => {
 		name: string;
 		items: { label: string; value: number }[];
 		want: any;
+		clickId: number;
 	}[] = [
 		{
 			name: 'single item',
 			items: [{ label: 'Snoop Dog', value: 420 }],
-			want: 420
+			want: 420,
+			clickId: 0
+		},
+		{
+			name: 'second item',
+			items: [{ label: 'Someone', value: 412}, { label: 'another person', value: 413 }],
+			want: 413,
+			clickId: 1
 		}
 	];
 
@@ -63,10 +71,9 @@ describe('ListView - click event', () => {
 			const onClick = vi.fn();
 
 			const { container } = render(<List items={t.items} onClick={onClick} />);
-			const el = container.getElementsByClassName('todo')[0];
-			t.items.forEach(() => expect(onClick).not.toHaveBeenCalled());
-			fireEvent.click(el);
-			t.items.forEach(item => expect(onClick).toHaveBeenCalledWith(item.value));
+			const element = container.getElementsByClassName('todo')[t.clickId];
+			fireEvent.click(element);
+			expect(onClick).toHaveBeenCalledWith(t.want);
 		});
 	});
 });

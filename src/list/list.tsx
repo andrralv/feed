@@ -7,5 +7,5 @@ interface ListItemArgs<T> {
 
 // List: shows a list of items. When clicked, the value of the item is passed to onClick.
 export const List = <T,>({ items, onClick }: ListItemArgs<T>) => {
-	return <ul>{items.map((item ) => <li onClick={() => onClick(item.value)} className={styles.todo}>{item.label}</li>)}</ul>;
+	return <ul className={styles.todoList}>{items.map((item ) => <li onClick={() => onClick(item.value)} className={styles.todo}>{item.label}</li>)}</ul>;
 };

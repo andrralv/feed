@@ -18,7 +18,6 @@
     width: 150px;
     background-color: $white10;
     box-shadow: 5px 5px 5px $grey70;
-    filter: drop-shadow(20px 20x 10px #4444dd);
     padding: 5px;
 
     ul {
@@ -29,7 +28,7 @@
         cursor: pointer;
 
         &:hover {
-          background-color: #f3cc9f;
+          background-color: $papaya;
           border-radius: 5px;
         }
       }
